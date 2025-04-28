@@ -1,0 +1,103 @@
+/* ======== 通用基础设置 ======== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* ======== 顶部 Header 样式 ======== */
+header {
+  position: relative;
+  background-image: url('../css/cnary-wharfe.jpg'); /* Canary Wharf背景图 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  min-height: 20vh; /* 撑满整个屏幕 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 让header中的所有元素浮在背景之上 */
+header * {
+  z-index: 2;
+}
+
+/* ======== 动画：淡入效果 ======== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ======== 文字和按钮居中 ======== */
+.center-content {
+  text-align: center;
+}
+
+/* ======== 导航栏 样式 ======== */
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ======== 主体内容 Main 样式 ======== */
+main {
+  flex: 1; /* 自动占满剩余空间 */
+  background-color: white; /* 主体背景白色 */
+  padding: 30px;
+}
+
+/* ======== 按钮样式 ======== */
+.button {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #333;
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+
+/* ======== 页脚 Footer 样式 ======== */
+footer {
+  background-color: rgba(240, 240, 240, 0.9);
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* 页脚上加一条淡灰色分割线 */
+}
+
+/* ======== Logo旋转动画（如果有*
