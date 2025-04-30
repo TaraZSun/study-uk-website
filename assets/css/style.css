@@ -1,15 +1,118 @@
-/* ======== 手机端样式：最大宽度 768px 以下 ======== */
+/* ======== 通用基础设置 ======== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* ======== 顶部 Header 样式 ======== */
+header {
+  position: relative;
+  background-image: url('cnary-wharfe.jpg');  /* ✅ 关键修复：路径修正 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  /* 默认固定背景 */
+  color: white;
+  text-align: center;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 让 header 中的所有元素浮在背景图上 */
+header * {
+  z-index: 2;
+}
+
+/* ======== 动画：淡入效果 ======== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ======== 居中文本和按钮 ======== */
+.center-content {
+  text-align: center;
+}
+
+/* ======== 导航栏 ======== */
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ======== 主体内容 ======== */
+main {
+  flex: 1;
+  background-color: white;
+  padding: 30px;
+}
+
+/* ======== 按钮样式 ======== */
+.button {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #333;
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+
+/* ======== 页脚 ======== */
+footer {
+  background-color: rgba(240, 240, 240, 0.9);
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ======== 移动端样式：响应式优化 ======== */
 @media screen and (max-width: 768px) {
   header {
+    background-attachment: scroll; /* 移动端 scroll 背景，避免性能问题 */
     min-height: 30vh;
     padding: 20px 10px;
-    background-attachment: scroll; /* mobile 上 fixed 会卡顿 */
   }
 
   h1, h2 {
     font-size: 1.5em;
     line-height: 1.3;
     margin: 10px 0;
+    text-align: center;
   }
 
   nav {
